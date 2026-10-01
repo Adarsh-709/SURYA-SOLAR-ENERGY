@@ -368,4 +368,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Distributor App Modal Logic
+    const distributorAppBtn = document.getElementById('distributorAppBtn');
+    const distributorWarningModal = document.getElementById('distributorWarningModal');
+    const closeDistributorModal = document.getElementById('closeDistributorModal');
+    const cancelDistributor = document.getElementById('cancelDistributor');
+    const proceedDistributor = document.getElementById('proceedDistributor');
+
+    if (distributorAppBtn && distributorWarningModal) {
+        distributorAppBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            distributorWarningModal.classList.remove('hidden');
+        });
+
+        const hideDistributorModal = () => {
+            distributorWarningModal.classList.add('hidden');
+        };
+
+        if (closeDistributorModal) closeDistributorModal.addEventListener('click', hideDistributorModal);
+        if (cancelDistributor) cancelDistributor.addEventListener('click', hideDistributorModal);
+        
+        if (proceedDistributor) {
+            proceedDistributor.addEventListener('click', () => {
+                hideDistributorModal();
+                // To download PDF: window.location.href = "pdfs/INFORMATION.pdf";
+                // To go to playstore: window.open("YOUR_PLAYSTORE_LINK", "_blank");
+                alert("This will download the distributor app.");
+            });
+        }
+    }
+
+    // PDF View Modal Logic
+    const viewPdfBtn = document.getElementById('viewPdfBtn');
+    const pdfModal = document.getElementById('pdfModal');
+    const closePdfModal = document.getElementById('closePdfModal');
+
+    if (viewPdfBtn && pdfModal) {
+        viewPdfBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            pdfModal.classList.remove('hidden');
+        });
+
+        if (closePdfModal) {
+            closePdfModal.addEventListener('click', () => {
+                pdfModal.classList.add('hidden');
+            });
+        }
+    }
+
 });
