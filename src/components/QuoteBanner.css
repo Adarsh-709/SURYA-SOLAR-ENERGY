@@ -1,0 +1,58 @@
+.quote-banner {
+  padding: 8rem 0;
+  background: var(--color-bg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-banner::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(242, 227, 0, 0.05) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.massive-quote {
+  font-size: 5.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--color-text);
+  position: relative;
+  z-index: 1;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.quote-mark {
+  color: rgba(242, 227, 0, 0.2);
+  font-size: 8rem;
+  line-height: 0;
+  vertical-align: -0.2em;
+  margin: 0 10px;
+}
+
+@media (max-width: 992px) {
+  .massive-quote {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .quote-banner {
+    padding: 5rem 0;
+  }
+  .massive-quote {
+    font-size: 2.5rem;
+    letter-spacing: -1px;
+  }
+  .quote-mark {
+    font-size: 3.5rem;
+  }
+}

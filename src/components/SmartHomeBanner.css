@@ -1,0 +1,69 @@
+.smarthome-banner-wrapper {
+  padding: 3rem 0;
+  background: var(--color-bg);
+}
+
+.smarthome-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.sh-line {
+  height: 2px;
+  flex: 1;
+}
+
+.left-line {
+  background: linear-gradient(90deg, transparent, rgba(242, 227, 0, 0.5));
+}
+
+.right-line {
+  background: linear-gradient(270deg, transparent, rgba(242, 227, 0, 0.5));
+}
+
+.sh-text {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .sh-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .smarthome-banner {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .sh-line {
+    width: 80%;
+    max-width: 300px;
+  }
+  .left-line {
+    background: linear-gradient(90deg, transparent, rgba(242, 227, 0, 0.5), transparent);
+  }
+  .right-line {
+    display: none;
+  }
+  .sh-text {
+    white-space: normal;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  .mobile-break {
+    display: block;
+  }
+}

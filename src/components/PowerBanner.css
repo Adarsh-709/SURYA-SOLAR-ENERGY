@@ -1,0 +1,51 @@
+.power-banner {
+  position: relative;
+  padding: 8rem 0;
+  background-image: url('/imgs/solar_installation_1790749660120.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.power-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(2px);
+}
+
+.power-banner .container {
+  position: relative;
+  z-index: 1;
+}
+
+.power-text {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 992px) {
+  .power-text {
+    font-size: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .power-banner {
+    padding: 6rem 0;
+    background-attachment: scroll; /* Disable parallax on mobile */
+  }
+  .power-text {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,475 @@
+.pm-scheme-section {
+  padding: 6rem 0;
+  background-color: var(--color-bg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pm-header {
+  max-width: 800px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pm-badge {
+  background: rgba(242, 227, 0, 0.1);
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pm-header h2 {
+  font-size: 2.5rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.pm-header h2 span {
+  color: var(--color-accent);
+}
+
+.pm-header p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Subsidy Grid */
+.subsidy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.subsidy-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subsidy-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.subsidy-card.highlight-card {
+  background: rgba(242, 227, 0, 0.05);
+  border-color: rgba(242, 227, 0, 0.2);
+  position: relative;
+}
+
+.subsidy-card.highlight-card:hover {
+  box-shadow: 0 15px 30px rgba(242, 227, 0, 0.15);
+}
+
+.subsidy-icon {
+  width: 64px;
+  height: 64px;
+  background: rgba(242, 227, 0, 0.1);
+  color: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.subsidy-card h3 {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.subsidy-amount {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #25D366;
+  margin-bottom: 0.5rem;
+}
+
+/* Financing Banner */
+.financing-banner {
+  display: flex;
+  background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0.5) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 5rem;
+}
+
+.fin-content {
+  flex: 1;
+  padding: 3rem;
+}
+
+.fin-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+
+.fin-content p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.fin-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fin-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: var(--color-text);
+}
+
+.fin-features li svg {
+  color: var(--color-accent);
+}
+
+.fin-highlight {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-width: 300px;
+}
+
+.bank-icon {
+  margin-bottom: 1rem;
+}
+
+.fin-highlight h4 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
+}
+
+.fin-highlight .rate {
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.fin-highlight p {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+/* Internal Transition */
+.internal-transition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: -2rem; /* Pulls it closer to financing banner */
+  margin-bottom: 2rem;
+}
+
+.internal-transition .it-line {
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.internal-transition h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .internal-transition h4 {
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+}
+
+/* Brand Tiers */
+.tiers-section {
+  padding-top: 2rem;
+}
+
+.tiers-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.tiers-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.tiers-header span {
+  color: var(--color-accent);
+}
+
+.tiers-header p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.tiers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.tier-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 3rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.tier-card:hover {
+  transform: translateY(-5px);
+}
+
+.premium-tier {
+  border-top: 4px solid var(--color-accent);
+}
+
+.value-tier {
+  border-top: 4px solid #4facfe;
+}
+
+.tier-badge {
+  display: inline-block;
+  background: rgba(242, 227, 0, 0.1);
+  color: var(--color-accent);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.tier-badge.value {
+  background: rgba(79, 172, 254, 0.1);
+  color: #4facfe;
+}
+
+.tier-brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.brand-logo img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+  border-radius: 8px;
+  background-color: white;
+  padding: 4px;
+}
+
+.brand-logo span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 0.5px;
+}
+
+.tier-price {
+  margin-bottom: 1.5rem;
+}
+
+.tier-price .price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--color-text);
+}
+
+.tier-price .unit {
+  font-size: 1.2rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.tier-card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  min-height: 50px;
+}
+
+.tier-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.tier-features li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--color-text);
+}
+
+.premium-tier .tier-features li svg {
+  color: var(--color-accent);
+}
+
+.value-tier .tier-features li svg {
+  color: #4facfe;
+}
+
+@media (max-width: 992px) {
+  .subsidy-grid, .tiers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .financing-banner {
+    flex-direction: column;
+  }
+  
+  .fin-highlight {
+    padding: 3rem 2rem;
+  }
+}
+
+/* Documents Section */
+.documents-section {
+  margin-top: 5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 3rem;
+}
+
+.doc-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.doc-main-icon {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.doc-header h3 {
+  font-size: 2rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.doc-header p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+}
+
+.doc-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  min-width: 250px;
+}
+
+.doc-item span {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.doc-item small {
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.doc-warning {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 68, 68, 0.1);
+  border: 1px solid rgba(255, 68, 68, 0.3);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.warning-icon {
+  color: #ff4444;
+  flex-shrink: 0;
+}
+
+.warning-text {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.warning-text strong {
+  color: #ff4444;
+}
+
+@media (max-width: 768px) {
+  .documents-section {
+    padding: 2rem 1.5rem;
+  }
+  .doc-warning {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+  .doc-grid {
+    flex-direction: column;
+  }
+}
+

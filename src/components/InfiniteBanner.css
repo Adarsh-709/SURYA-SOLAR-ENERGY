@@ -1,0 +1,86 @@
+.infinite-banner-wrapper {
+  overflow: hidden;
+  padding: 4rem 0;
+  background: var(--color-bg);
+}
+
+.infinite-banner {
+  background: transparent;
+  color: var(--color-accent);
+  padding: 1.5rem 0;
+  border-top: 1px dashed rgba(242, 227, 0, 0.3);
+  border-bottom: 1px dashed rgba(242, 227, 0, 0.3);
+  position: relative;
+}
+
+.infinite-banner::before,
+.infinite-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+}
+
+.infinite-banner::before {
+  left: 0;
+  background: linear-gradient(to right, var(--color-bg), transparent);
+}
+
+.infinite-banner::after {
+  right: 0;
+  background: linear-gradient(to left, var(--color-bg), transparent);
+}
+
+.infinite-marquee {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.infinite-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  /* Animates in the reverse direction of the previous marquee */
+  animation: infinite-scroll 25s linear infinite reverse;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+}
+
+.infinite-content .dot {
+  font-size: 2rem;
+  opacity: 0.4;
+  color: #ffffff;
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 992px) {
+  .infinite-content {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .infinite-banner-wrapper {
+    padding: 2rem 0;
+  }
+  .infinite-content {
+    font-size: 1.8rem;
+    gap: 1.5rem;
+  }
+  .infinite-banner::before,
+  .infinite-banner::after {
+    width: 50px;
+  }
+}
