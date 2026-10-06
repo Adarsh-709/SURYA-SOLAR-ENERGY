@@ -132,4 +132,19 @@
     display: block;
     z-index: 101;
   }
+  .logo-img {
+    height: 32px;
+  }
+  .logo-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-text {
+    font-size: 0.95rem;
+  }
+  .mobile-menu a {
+    font-size: 1.5rem;
+  }
 }

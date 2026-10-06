@@ -158,3 +158,12 @@
     gap: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .solar-types-section {
+    padding: 4rem 0;
+  }
+  .solar-types-section .section-header h2 {
+    font-size: 2rem;
+  }
+}

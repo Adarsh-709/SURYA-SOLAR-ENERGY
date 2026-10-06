@@ -459,6 +459,12 @@
 }
 
 @media (max-width: 768px) {
+  .pm-scheme-section {
+    padding: 4rem 0;
+  }
+  .pm-header h2 {
+    font-size: 2rem;
+  }
   .documents-section {
     padding: 2rem 1.5rem;
   }

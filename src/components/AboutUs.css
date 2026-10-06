@@ -115,6 +115,9 @@
 }
 
 @media (max-width: 768px) {
+  .about-section {
+    padding: 4rem 0;
+  }
   .about-text h2 {
     font-size: 2.2rem;
   }

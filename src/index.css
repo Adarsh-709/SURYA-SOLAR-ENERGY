@@ -59,6 +59,20 @@ body {
   padding: 0 2rem;
 }
 
+@media (max-width: 768px) {
+  .display-text {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .heading-lg {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+}
+
 /* Animations */
 @keyframes fadeUp {
   from {
@@ -97,6 +111,15 @@ body {
   background-color: #fff;
   transform: translateY(-2px);
   box-shadow: 0 10px 20px var(--color-accent-glow);
+}
+
+@media (max-width: 768px) {
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 /* Glassmorphism */

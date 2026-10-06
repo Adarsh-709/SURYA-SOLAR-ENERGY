@@ -143,6 +143,12 @@
 }
 
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 4rem 0;
+  }
+  .contact-section h2 {
+    font-size: 2rem;
+  }
   .contact-form-container {
     padding: 2rem 1.5rem;
   }

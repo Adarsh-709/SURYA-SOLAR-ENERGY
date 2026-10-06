@@ -114,11 +114,24 @@
 }
 
 @media (max-width: 768px) {
+  .footer-section {
+    padding: 4rem 0 2rem;
+  }
   .footer-content {
     flex-direction: column;
+    gap: 2rem;
   }
   .footer-links {
     flex-direction: column;
     gap: 2rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .legal-links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
   }
 }

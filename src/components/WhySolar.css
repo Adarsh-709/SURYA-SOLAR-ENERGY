@@ -91,3 +91,12 @@
     gap: 1.5rem;
   }
 }
+
+@media (max-width: 768px) {
+  .why-solar-section {
+    padding: 4rem 0;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
