@@ -15,6 +15,7 @@ import SolutionsTransition from './components/SolutionsTransition';
 import AboutUs from './components/AboutUs';
 import FinalQuoteBanner from './components/FinalQuoteBanner';
 import ContactUs from './components/ContactUs';
+import PreFooterTransition from './components/PreFooterTransition';
 import Footer from './components/Footer';
 import FloatingButtons from './components/FloatingButtons';
 
@@ -37,6 +38,7 @@ const Home = () => {
       <AboutUs />
       <FinalQuoteBanner />
       <ContactUs />
+      <PreFooterTransition />
       <Footer />
       <FloatingButtons />
     </>

@@ -41,6 +41,7 @@ const Navbar = () => {
           <a href="/#home" className="nav-link">Home</a>
           <a href="/#about" className="nav-link">About</a>
           <a href="/#solutions" className="nav-link">Solutions</a>
+          <div id="google_translate_element" className="nav-translate"></div>
           <a href="/#contact" className="btn-primary nav-btn">Get Quote</a>
         </div>
 
@@ -57,6 +58,7 @@ const Navbar = () => {
         <a href="/#home" onClick={() => setMobileMenuOpen(false)}>Home</a>
         <a href="/#about" onClick={() => setMobileMenuOpen(false)}>About</a>
         <a href="/#solutions" onClick={() => setMobileMenuOpen(false)}>Solutions</a>
+        <div id="google_translate_element_mobile" className="mobile-translate"></div>
         <a href="/#contact" onClick={() => setMobileMenuOpen(false)} className="text-accent">Get Quote</a>
       </div>
     </nav>

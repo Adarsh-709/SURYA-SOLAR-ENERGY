@@ -9,7 +9,7 @@ const AboutUs = () => {
           <div className="about-text animate-fade-up">
             <h2 className="heading-lg">Empowering Bengal with <br/><span className="text-accent">Clean Energy</span></h2>
             <p>
-              As a <strong>Prime Distributor</strong> in North Bengal, Surya Solar Energy is committed to delivering world-class solar solutions. We handle everything from government approvals and subsidy processing to seamless installation and lifetime maintenance.
+              As a <strong>Prime Distributor</strong> under Max Solar Project & Services, channel partner of APN Solar, Surya Solar Energy is committed to delivering world-class solar solutions. We handle everything from government approvals and subsidy processing to seamless installation and lifetime maintenance.
             </p>
             <p>
               Our office is located at <strong>1st Floor, Milestone Building, Check Post Siliguri</strong>. 

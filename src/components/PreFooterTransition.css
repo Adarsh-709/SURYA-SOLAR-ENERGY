@@ -1,0 +1,119 @@
+.pre-footer-transition {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  background-color: var(--color-bg, #050505);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: crosshair;
+  padding-bottom: 50px; /* Space for the wave */
+}
+
+.pft-glow-follower {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle 300px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(242, 227, 0, 0.15),
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.pre-footer-transition:hover .pft-glow-follower {
+  opacity: 1;
+}
+
+.pft-content {
+  text-align: center;
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.pft-text {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: linear-gradient(
+    90deg, 
+    rgba(255,255,255,0.2) 0%, 
+    var(--color-accent, #f2e300) 50%, 
+    rgba(255,255,255,0.2) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s infinite linear;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pft-text-accent {
+  color: var(--color-accent, #f2e300);
+  -webkit-text-fill-color: var(--color-accent, #f2e300);
+}
+
+.pre-footer-transition:hover .pft-text {
+  transform: scale(1.05);
+  text-shadow: 0 0 30px rgba(242, 227, 0, 0.3);
+}
+
+.pft-subtext {
+  font-size: 1.1rem;
+  color: var(--color-text-muted, #888);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.pre-footer-transition:hover .pft-subtext {
+  opacity: 1;
+  transform: translateY(0);
+  color: var(--color-accent, #f2e300);
+}
+
+@keyframes shine {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+.pft-wave-container {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.pft-wave-svg {
+  width: 100%;
+  height: 100%;
+  fill: #000; /* Matches the footer background color */
+}
+
+@media (max-width: 768px) {
+  .pft-text {
+    font-size: 2rem;
+  }
+  .pre-footer-transition {
+    height: 250px;
+  }
+}

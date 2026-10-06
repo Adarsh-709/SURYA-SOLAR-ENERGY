@@ -63,15 +63,12 @@
 @keyframes float-glow {
   0% { 
     transform: translateY(0px); 
-    filter: drop-shadow(0 0 4px rgba(242, 227, 0, 0.3));
   }
   50% { 
     transform: translateY(-15px); 
-    filter: drop-shadow(0 0 12px rgba(242, 227, 0, 0.9));
   }
   100% { 
     transform: translateY(0px); 
-    filter: drop-shadow(0 0 4px rgba(242, 227, 0, 0.3));
   }
 }
 

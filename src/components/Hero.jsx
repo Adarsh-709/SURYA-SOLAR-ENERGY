@@ -14,8 +14,7 @@ const Hero = () => {
           <div className="hero-content animate-fade-up">
             <h1 className="display-text">Powering<br/>The Future.</h1>
             <p className="hero-description text-muted">
-              Harness the pure power of the sun with state-of-the-art solar technology. 
-              Engineered for maximum efficiency, designed for a sustainable tomorrow.
+              As a Prime Distributor under Max Solar Project & Services, channel partner of APN Solar, Surya Solar Energy is committed to delivering world-class solar solutions.
             </p>
             
             <div className="hero-actions">
