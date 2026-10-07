@@ -133,6 +133,11 @@
   transition: border-color 0.2s;
 }
 
+.calc-form select option {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
 .calc-form input:focus,
 .calc-form select:focus {
   outline: none;

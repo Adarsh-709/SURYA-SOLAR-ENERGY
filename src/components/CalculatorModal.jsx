@@ -57,7 +57,14 @@ const CalculatorModal = ({ isOpen, onClose }) => {
 
   const netCost = totalCost - subsidy;
 
-  const annualInterestRate = 0.06;
+  // Domestic loans are subsidized (~6%), Commercial loans are standard (~10%)
+  const annualInterestRate = mode === 'domestic' ? 0.06 : 0.10;
+  
+  // Calculate simple payback period (Years)
+  // Net cost after tax savings / Yearly bill savings
+  const effectiveNetCost = mode === 'commercial' ? (totalCost - taxSavings) : netCost;
+  const annualSavings = totalYearlyBill; 
+  const paybackPeriod = annualSavings > 0 ? (effectiveNetCost / annualSavings).toFixed(1) : 0;
   const monthlyRate = annualInterestRate / 12;
   const loanMonths = (loanYears || 5) * 12;
   
@@ -120,10 +127,9 @@ const CalculatorModal = ({ isOpen, onClose }) => {
               <div className="input-group">
                 <label>Loan Duration (Years)</label>
                 <select value={loanYears} onChange={e => setLoanYears(Number(e.target.value))}>
-                  <option value="3">3 Years</option>
-                  <option value="5">5 Years</option>
-                  <option value="7">7 Years</option>
-                  <option value="10">10 Years</option>
+                  {[...Array(10)].map((_, i) => (
+                    <option key={i + 1} value={i + 1}>{i + 1} {i === 0 ? 'Year' : 'Years'}</option>
+                  ))}
                 </select>
               </div>
 
@@ -159,11 +165,18 @@ const CalculatorModal = ({ isOpen, onClose }) => {
                     <small>PM Surya Ghar Yojana</small>
                   </div>
                 ) : (
-                  <div className="res-card">
-                    <h4>Est. Tax Savings</h4>
-                    <div className="res-val text-green">{formatCurrency(taxSavings)}</div>
-                    <small>Accelerated Depreciation</small>
-                  </div>
+                  <>
+                    <div className="res-card">
+                      <h4>Est. Tax Savings</h4>
+                      <div className="res-val text-green">{formatCurrency(taxSavings)}</div>
+                      <small>Accelerated Depreciation</small>
+                    </div>
+                    <div className="res-card highlight" style={{ borderColor: '#25D366', background: 'rgba(37, 211, 102, 0.05)' }}>
+                      <h4>ROI / Payback</h4>
+                      <div className="res-val text-green">{paybackPeriod} Years</div>
+                      <small>System pays for itself!</small>
+                    </div>
+                  </>
                 )}
 
                 <div className="res-card">
