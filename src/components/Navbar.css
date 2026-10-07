@@ -87,6 +87,12 @@
   font-size: 0.9rem;
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -96,32 +102,91 @@
 }
 
 .mobile-menu {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   width: 100%;
-  height: 100vh;
-  background: var(--color-bg);
+  height: auto;
+  padding: 2rem 0;
+  background: rgba(5, 5, 5, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-  transform: translateY(-100%);
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  z-index: 99;
+  gap: 1.5rem;
+  /* Transform for dropdown effect */
+  transform: translateY(-150%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
 }
 
 .mobile-menu.open {
   transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .mobile-menu a {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 1.5rem;
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--color-text);
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--color-accent);
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 130%;
+  right: 0;
+  background: var(--color-surface);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  min-width: 120px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeUp 0.2s ease forwards;
+}
+
+.lang-dropdown button {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  padding: 10px 15px;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.lang-dropdown button:hover {
+  background: rgba(255,255,255,0.05);
+  color: var(--color-accent);
+}
+
+@media (max-width: 968px) {
+  .nav-links.desktop-only {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+    z-index: 101;
+  }
 }
 
 @media (max-width: 768px) {
@@ -142,9 +207,9 @@
 
 @media (max-width: 480px) {
   .logo-text {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
-  .mobile-menu a {
-    font-size: 1.5rem;
+  .nav-actions {
+    gap: 0.5rem;
   }
 }
