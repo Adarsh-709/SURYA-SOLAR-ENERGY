@@ -194,7 +194,7 @@ const CalculatorModal = ({ isOpen, onClose }) => {
                 <div className="res-card">
                   <h4>Total Interest Paid</h4>
                   <div className="res-val">{formatCurrency(netCost > 0 ? (emi * loanMonths) - netCost : 0)}</div>
-                  <small>Over {loanYears} Years @ 6.00%</small>
+                  <small>Over {loanYears} Years @ {(annualInterestRate * 100).toFixed(2)}%</small>
                 </div>
               </div>
               
