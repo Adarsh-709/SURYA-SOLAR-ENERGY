@@ -196,6 +196,22 @@ const CalculatorModal = ({ isOpen, onClose }) => {
                   <div className="res-val">{formatCurrency(netCost > 0 ? (emi * loanMonths) - netCost : 0)}</div>
                   <small>Over {loanYears} Years @ {(annualInterestRate * 100).toFixed(2)}%</small>
                 </div>
+
+                <div className="res-card highlight" style={{ gridColumn: '1 / -1', borderColor: '#25D366', background: 'rgba(37, 211, 102, 0.05)' }}>
+                  <h4 style={{ color: '#25D366', marginBottom: '10px' }}>🌱 Your Green Impact</h4>
+                  <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', marginTop: '5px' }}>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '2rem', marginBottom: '5px' }}>🌳</div>
+                      <div className="res-val text-green">{Math.round(recommendedSize * 45)}</div>
+                      <small>Trees Planted / Yr</small>
+                    </div>
+                    <div style={{ textAlign: 'center' }}>
+                      <div style={{ fontSize: '2rem', marginBottom: '5px' }}>☁️</div>
+                      <div className="res-val text-green">{(recommendedSize * 1.5).toFixed(1)}</div>
+                      <small>Tons CO₂ Saved / Yr</small>
+                    </div>
+                  </div>
+                </div>
               </div>
               
               <div className="res-comparison-detailed">
