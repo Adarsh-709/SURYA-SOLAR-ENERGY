@@ -30,7 +30,7 @@ const NetMeteringAnimation = () => {
         <div className={`nm-responsive-container ${isNight ? 'night-mode' : 'day-mode'}`}>
           <div className="nm-flow-row">
             
-            <div className="nm-step">
+            <div className="nm-step item-sun">
               <div className={`nm-icon-circle ${!isNight ? 'sun-glow' : 'inactive-glow'}`}>
                 {isNight ? (
                   <img src="https://img.icons8.com/color/96/partly-cloudy-night--v1.png" alt="Moon and Clouds" width="55" height="55" />
@@ -41,11 +41,11 @@ const NetMeteringAnimation = () => {
               <span>{isNight ? 'Night Sky' : 'Sunlight'}</span>
             </div>
 
-            <div className="nm-arrow-container">
+            <div className="nm-arrow-container arrow-sun-panel">
               {!isNight && <div className="animated-arrow forward"></div>}
             </div>
 
-            <div className="nm-step">
+            <div className="nm-step item-panel">
               <div className={`nm-icon-circle ${!isNight ? 'panel-glow' : 'inactive-glow'}`}>
                 <img src="https://img.icons8.com/color/96/solar-panel.png" alt="Solar Panels" width="60" height="60" />
               </div>
@@ -53,12 +53,12 @@ const NetMeteringAnimation = () => {
               <div className="nm-tooltip">{!isNight ? 'Generates DC Electricity' : 'Inactive at night'}</div>
             </div>
 
-            <div className="nm-arrow-container">
+            <div className="nm-arrow-container arrow-panel-inv">
               {!isNight && <div className="animated-arrow forward dc-glow"></div>}
               {!isNight && <div className="power-type-badge">DC</div>}
             </div>
 
-            <div className="nm-step">
+            <div className="nm-step item-inv">
               <div className={`nm-icon-circle ${!isNight ? 'inverter-glow' : 'inactive-glow'}`}>
                 <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
@@ -72,12 +72,12 @@ const NetMeteringAnimation = () => {
               <div className="nm-tooltip">{!isNight ? 'Converts DC to AC' : 'Standing by'}</div>
             </div>
 
-            <div className="nm-arrow-container">
+            <div className="nm-arrow-container arrow-inv-home">
               {!isNight && <div className="animated-arrow forward ac-glow"></div>}
               {!isNight && <div className="power-type-badge">AC</div>}
             </div>
 
-            <div className="nm-step house-step">
+            <div className="nm-step house-step item-home">
               <div className={`nm-icon-circle ${!isNight ? 'house-glow-day' : 'house-glow-night'}`}>
                 <img src="https://img.icons8.com/color/96/home.png" alt="Home" width="60" height="60" />
               </div>
@@ -87,7 +87,7 @@ const NetMeteringAnimation = () => {
               </div>
             </div>
 
-            <div className="nm-arrow-container bi-directional">
+            <div className="nm-arrow-container bi-directional item-meter">
               {!isNight ? (
                 <>
                   <div className="animated-arrow forward excess-glow"></div>
@@ -107,7 +107,7 @@ const NetMeteringAnimation = () => {
               )}
             </div>
 
-            <div className="nm-step">
+            <div className="nm-step item-grid">
               <div className="nm-icon-circle grid-glow">🗼</div>
               <span>Electric Grid</span>
               <div className="nm-tooltip">

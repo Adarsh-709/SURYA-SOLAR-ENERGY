@@ -116,8 +116,8 @@
 
 .nm-arrow-container {
   flex: 1;
-  height: 4px;
-  background: rgba(255,255,255,0.05);
+  height: 0;
+  border-top: 2px dashed rgba(255,255,255,0.2);
   position: relative;
   margin: 0 10px;
   margin-top: -30px; /* Align with circles */
@@ -125,7 +125,7 @@
 
 .power-type-badge {
   position: absolute;
-  top: -25px;
+  top: -35px;
   left: 50%;
   transform: translateX(-50%);
   background: var(--color-bg);
@@ -138,38 +138,59 @@
 }
 
 .bi-directional {
-  height: 8px;
+  height: 16px;
+  border-top: none;
   background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
+.bi-directional::before, .bi-directional::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 2px dashed rgba(255,255,255,0.2);
+}
+.bi-directional::before { top: 0; }
+.bi-directional::after { bottom: 0; }
+
 .animated-arrow {
   position: absolute;
-  height: 4px;
-  width: 30px;
-  background: var(--color-accent);
-  box-shadow: 0 0 10px var(--color-accent);
-  border-radius: 4px;
+  top: -12px;
+  height: 24px;
+  width: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
-.dc-glow { background: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
-.ac-glow { background: #ff9900; box-shadow: 0 0 10px #ff9900; }
+.animated-arrow::after {
+  content: "⚡";
+  font-size: 1.2rem;
+  filter: drop-shadow(0 0 8px yellow);
+}
+
+.dc-glow::after { filter: drop-shadow(0 0 8px #00ffcc); }
+.ac-glow::after { filter: drop-shadow(0 0 8px #ff9900); }
+.excess-glow::after { filter: drop-shadow(0 0 8px #25D366); }
 
 .forward {
   animation: shootRight 2s linear infinite;
 }
 
 .backward {
-  background: #6496ff;
-  box-shadow: 0 0 10px #6496ff;
   animation: shootLeft 2s linear infinite;
+  top: auto;
+  bottom: -12px;
 }
 
-.excess-glow {
-  background: #25D366;
-  box-shadow: 0 0 10px #25D366;
+.backward::after {
+  filter: drop-shadow(0 0 8px #6496ff);
 }
 
 @keyframes shootRight {
@@ -198,6 +219,7 @@
   text-align: center;
   white-space: nowrap;
   transition: all 0.3s;
+  z-index: 5;
 }
 
 .meter-badge.night-badge {
@@ -223,69 +245,108 @@
 
 @media (max-width: 900px) {
   .nm-responsive-container {
-    padding: 2rem 1rem;
-    overflow-x: hidden; /* No more sideways scrolling */
+    padding: 1.5rem 0.5rem;
+    overflow-x: hidden;
   }
   
   .nm-flow-row {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 50px 1fr;
+    gap: 15px 0;
+    align-items: center;
+    justify-items: center;
+    padding: 0;
     min-width: 100%;
     max-width: 100%;
-    padding: 20px 0;
   }
-  
+
+  .nm-icon-circle {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 5px;
+  }
+  .nm-icon-circle img, .nm-icon-circle svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
   .nm-step {
-    width: 100%;
+    width: auto;
     margin-bottom: 0;
   }
-
+  .nm-step span {
+    font-size: 0.75rem;
+  }
   .nm-tooltip {
-    position: relative;
-    bottom: auto;
-    margin-top: 5px;
-    width: 100%;
+    display: none;
   }
 
-  .nm-arrow-container {
-    width: 4px;
-    height: 60px;
-    margin: 15px 0;
-    flex: none;
-    transform: rotate(90deg); /* Rotate horizontal arrows to shoot downwards */
+  /* --- 4-Row U-Turn Layout --- */
+  
+  /* Row 1: Sun */
+  .item-sun { grid-column: 1 / 4; grid-row: 1; }
+  .arrow-sun-panel { display: none; }
+  
+  /* Row 2: Panels -> Inverter */
+  .item-panel { grid-column: 1; grid-row: 2; }
+  .arrow-panel-inv { grid-column: 2; grid-row: 2; width: 40px; height: 0; margin: 0; }
+  .item-inv { grid-column: 3; grid-row: 2; }
+  
+  /* Row 3: Vertical Arrow from Inverter Down to Home */
+  .arrow-inv-home { 
+    grid-column: 3; grid-row: 3; 
+    width: 40px; height: 0; margin: 0; 
+    transform: rotate(90deg); 
   }
+  
+  /* Row 4: Grid <- Meter -> Home (Right-to-Left U-Turn) */
+  .item-grid { grid-column: 1; grid-row: 4; }
+  .item-meter { 
+    grid-column: 2; grid-row: 4; 
+    width: 40px; height: 16px; margin: 0; 
+    transform: rotate(180deg); /* Flip it so forward points Right-to-Left */
+  }
+  .item-home { grid-column: 3; grid-row: 4; }
 
+  /* --- Badges --- */
   .power-type-badge {
-    top: -30px;
-    transform: translateX(-50%) rotate(-90deg); /* Counter-rotate text so it stays upright */
+    top: -25px;
+    font-size: 0.6rem;
+    padding: 2px 4px;
   }
-
-  .bi-directional {
-    height: 60px;
-    width: 12px; /* space for two arrows */
-    flex-direction: row; /* arrows sit side-by-side */
-    justify-content: space-between;
-    margin: 30px 0;
-    background: transparent;
+  
+  .arrow-inv-home .power-type-badge {
+    transform: translateX(-50%) rotate(-90deg);
+    top: -20px;
+    left: -20px;
+    display: block; /* Show the AC badge! */
   }
 
   .animated-arrow {
-    width: 30px;
+    width: 20px;
+    height: 20px;
   }
 
   .meter-badge {
-    top: 50%;
-    left: -120px;
-    transform: translateY(-50%) rotate(-90deg);
+    top: 30px; /* Below the arrows due to 180deg flip */
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg); /* Counter-rotate, using -50% to properly center itself */
+    padding: 2px 6px;
   }
-
+  
   .meter-badge span {
-    font-size: 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .meter-badge small {
+    display: none;
   }
 }
 
 @media (max-width: 500px) {
-  .meter-badge {
-    left: -100px;
-    transform: translateY(-50%) scale(0.8) rotate(-90deg);
+  .nm-flow-row {
+    grid-template-columns: 1fr 40px 1fr;
   }
+  .arrow-panel-inv { width: 30px; }
+  .item-meter { width: 30px; }
+  .arrow-inv-home { width: 30px; }
 }
