@@ -3,8 +3,10 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import QuoteBanner from './components/QuoteBanner';
 import PMSuryaGhar from './components/PMSuryaGhar';
+import NetMeteringAnimation from './components/NetMeteringAnimation';
 import ValuesBanner from './components/ValuesBanner';
 import WhySolar from './components/WhySolar';
+import BeforeAfterBill from './components/BeforeAfterBill';
 import SmartHomeBanner from './components/SmartHomeBanner';
 import SolarTypes from './components/SolarTypes';
 import PowerBanner from './components/PowerBanner';
@@ -27,8 +29,10 @@ const Home = () => {
       <Hero />
       <QuoteBanner />
       <PMSuryaGhar />
+      <NetMeteringAnimation />
       <ValuesBanner />
       <WhySolar />
+      <BeforeAfterBill />
       <SmartHomeBanner />
       <SolarTypes />
       <PowerBanner />

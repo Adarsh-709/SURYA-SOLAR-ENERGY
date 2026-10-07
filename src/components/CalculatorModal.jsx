@@ -213,8 +213,8 @@ const CalculatorModal = ({ isOpen, onClose }) => {
                   </div>
                 </div>
               </div>
-              
-              <div className="res-comparison-detailed">
+
+              <div className="res-comparison-detailed" style={{ marginTop: '2rem' }}>
                 <h3>Monthly Bill Vs. Solar EMI Comparison</h3>
                 
                 <div className="comp-row">

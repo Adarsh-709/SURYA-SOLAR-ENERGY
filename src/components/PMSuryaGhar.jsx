@@ -1,5 +1,6 @@
 import React from 'react';
 import { Sun, CheckCircle2, Landmark, ShieldCheck, Zap, FileText, AlertCircle } from 'lucide-react';
+import SubsidyChecker from './SubsidyChecker';
 import './PMSuryaGhar.css';
 
 const PMSuryaGhar = () => {
@@ -15,6 +16,8 @@ const PMSuryaGhar = () => {
             heavy subsidies to make electricity practically free for residential homes.
           </p>
         </div>
+
+        <SubsidyChecker />
 
         {/* Subsidy Breakdown */}
         <div className="subsidy-grid">
