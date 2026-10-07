@@ -224,5 +224,68 @@
 @media (max-width: 900px) {
   .nm-responsive-container {
     padding: 2rem 1rem;
+    overflow-x: hidden; /* No more sideways scrolling */
+  }
+  
+  .nm-flow-row {
+    flex-direction: column;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px 0;
+  }
+  
+  .nm-step {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .nm-tooltip {
+    position: relative;
+    bottom: auto;
+    margin-top: 5px;
+    width: 100%;
+  }
+
+  .nm-arrow-container {
+    width: 4px;
+    height: 60px;
+    margin: 15px 0;
+    flex: none;
+    transform: rotate(90deg); /* Rotate horizontal arrows to shoot downwards */
+  }
+
+  .power-type-badge {
+    top: -30px;
+    transform: translateX(-50%) rotate(-90deg); /* Counter-rotate text so it stays upright */
+  }
+
+  .bi-directional {
+    height: 60px;
+    width: 12px; /* space for two arrows */
+    flex-direction: row; /* arrows sit side-by-side */
+    justify-content: space-between;
+    margin: 30px 0;
+    background: transparent;
+  }
+
+  .animated-arrow {
+    width: 30px;
+  }
+
+  .meter-badge {
+    top: 50%;
+    left: -120px;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  .meter-badge span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .meter-badge {
+    left: -100px;
+    transform: translateY(-50%) scale(0.8) rotate(-90deg);
   }
 }
