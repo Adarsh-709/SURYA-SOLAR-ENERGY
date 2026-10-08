@@ -28,6 +28,7 @@ const Footer = () => {
             <div className="link-group">
               <h4>Company</h4>
               <a href="/#about">About Us</a>
+              <Link to="/gallery">Gallery</Link>
               <Link to="/careers">Careers</Link>
               <a href="/#contact">Contact</a>
             </div>

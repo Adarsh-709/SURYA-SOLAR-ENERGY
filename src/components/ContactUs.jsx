@@ -75,7 +75,7 @@ ${formData.message}`;
               <div className="info-icon"><Clock size={24} /></div>
               <div className="info-text">
                 <h4>Working Hours</h4>
-                <p>Monday - Saturday: 9:00 AM - 7:00 PM</p>
+                <p>Monday - Saturday: 10:00 AM - 6:00 PM</p>
                 <p>Sunday: Closed</p>
               </div>
             </div>
